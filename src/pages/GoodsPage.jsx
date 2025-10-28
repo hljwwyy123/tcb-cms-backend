@@ -214,14 +214,6 @@ const GoodsPage = () => {
 
   return (
     <div className="space-y-6">
-      {/* 演示提示 */}
-      <div className="alert alert-info">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current shrink-0 w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <span>🎯 <strong>演示模式</strong>：您可以体验完整的操作流程（新增、编辑表单），但保存功能已禁用以保护演示数据。删除操作已完全禁用。</span>
-      </div>
-
       {/* 首次加载的全屏loading */}
       {loading && goods.length === 0 ? (
         <div className="flex justify-center items-center h-64">
@@ -510,8 +502,8 @@ const GoodsPage = () => {
               <button onClick={closeModal} className="btn">
                 取消
               </button>
-              <div className="tooltip tooltip-left" data-tip="演示模式：保存功能已禁用，您可以体验表单填写但无法保存数据">
-                <button disabled className="btn btn-primary btn-disabled">
+              <div className="tooltip tooltip-left" >
+                <button className="btn btn-primary" onClick={saveGoods}>
                   保存
                 </button>
               </div>
